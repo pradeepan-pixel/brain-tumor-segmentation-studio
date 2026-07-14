@@ -1,210 +1,168 @@
 <p align="center">
   <img src="screenshots/banner.png" alt="Brain Tumor Segmentation Studio Banner" width="100%">
 </p>
-# Brain Tumor Segmentation Studio
 
-A deep learning-based Brain Tumor Segmentation application built using a custom 3D U-Net and the BraTS2021 dataset.
+<h1 align="center">🧠 Brain Tumor Segmentation Studio</h1>
 
-## Features
+<p align="center">
+A Deep Learning Desktop Application for Brain Tumor Segmentation from Multi-Modal MRI using a Custom 3D U-Net
+</p>
 
-- 3D U-Net model for brain tumor segmentation
-- BraTS2021 MRI dataset support
-- 2D MRI slice visualization
-- 3D tumor visualization
-- PyQt6 desktop GUI
-- Tumor statistics and measurements
-- PDF report generation
+<p align="center">
 
-## Technologies Used
+![Python](https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python)
+![PyTorch](https://img.shields.io/badge/PyTorch-DeepLearning-red?style=for-the-badge&logo=pytorch)
+![PyQt6](https://img.shields.io/badge/PyQt6-Desktop%20GUI-green?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
 
-- Python
-- PyTorch
-- PyQt6
-- NumPy
-- Nibabel
-- PyVista
-- VTK
-
-## Dataset
-
-BraTS2021 Brain Tumor Segmentation Dataset
-
-## Author
-
-Pradeep Kamalanathan
-# 🧠 Brain Tumor Segmentation Studio
-
-> A desktop application for automatic brain tumor segmentation from multi-modal MRI using a custom 3D U-Net model trained on the BraTS2021 dataset.
-
-![Python](https://img.shields.io/badge/Python-3.11-blue)
-![PyTorch](https://img.shields.io/badge/PyTorch-2.x-red)
-![PyQt6](https://img.shields.io/badge/PyQt6-GUI-green)
-![License](https://img.shields.io/badge/License-MIT-yellow)
+</p>
 
 ---
 
-# 📌 Overview
+# 📌 Project Overview
 
-Brain Tumor Segmentation Studio is a deep learning application that automatically segments brain tumors from multi-modal MRI scans.
+Brain Tumor Segmentation Studio is a desktop application that automatically detects and segments brain tumors from multi-modal MRI scans using a custom-built **3D U-Net** deep learning model trained on the **BraTS2021 dataset**.
 
-The project includes:
-
-- Custom 3D U-Net implementation
-- Complete training pipeline
-- PyQt6 desktop application
-- Interactive 2D MRI viewer
-- Interactive 3D tumor visualization
-- Prediction metrics
-- PDF report generation
+The application provides an end-to-end workflow—from loading MRI scans and performing segmentation to visualizing results in both **2D and 3D**, computing tumor statistics, and exporting reports.
 
 ---
-# 🖼️ Application Preview
 
-## Home Screen
+# ✨ Key Features
+
+- 🧠 Custom 3D U-Net implementation in PyTorch
+- 🩻 Multi-modal MRI support (FLAIR, T1, T1CE, T2)
+- 🖥️ Interactive PyQt6 desktop application
+- 📊 Automatic tumor segmentation
+- 🌍 Interactive 3D tumor visualization
+- 🖼️ 2D MRI slice viewer
+- 📈 Tumor volume and prediction statistics
+- 📄 PDF report generation
+- 💾 Model checkpoint loading
+- ⚡ GPU acceleration using CUDA
+
+---
+
+# 📷 Application Preview
+
+## 🏠 Home Screen
 
 ![Home](screenshots/homepage.png)
 
 ---
 
-## Patient & Model Loading
+## 📂 Loading Patient MRI
 
 ![Patient](screenshots/patients_load.png)
 
 ---
 
-## Prediction Results
-
-![Prediction](screenshots/prediction_074.png)
-
----
-
-## 3D Tumor Visualization
-
-![3D](screenshots/3d_generated.png)
-
-# 🏗 System Architecture
-
-```
-                BraTS2021 Dataset
-                        │
-                        ▼
-             MRI Preprocessing
-                        │
-                        ▼
-               3D U-Net Training
-                        │
-                        ▼
-              Trained Model (.pth)
-                        │
-                        ▼
-             Desktop GUI (PyQt6)
-                        │
-       ┌────────────────┴────────────────┐
-       ▼                                 ▼
- 2D Visualization                 3D Visualization
-       │                                 │
-       └──────────────┬──────────────────┘
-                      ▼
-            Prediction & Report Export
-```
-
----
-
-# ✨ Features
-
-- ✅ Brain tumor segmentation using Custom 3D U-Net
-- ✅ BraTS2021 Dataset support
-- ✅ Multi-modal MRI input
-  - FLAIR
-  - T1
-  - T1CE
-  - T2
-- ✅ 2D MRI slice visualization
-- ✅ 3D tumor rendering
-- ✅ Prediction statistics
-- ✅ PDF report generation
-- ✅ Interactive desktop application
-- ✅ Model checkpoint loading
-
----
-
-# 🖥 Application Screenshots
-
-## Home Screen
-
-![Home](screenshots/homepage.png)
-
----
-
-## Patient & Model Loading
-
-![Patient](screenshots/patients_load.png)
-
----
-
-## Model Information
+## 🤖 Loading Trained Model
 
 ![Model](screenshots/model.png)
 
 ---
 
-## Prediction
+## 🎯 Brain Tumor Prediction
 
 ![Prediction](screenshots/prediction_074.png)
 
 ---
 
-## 3D Tumor Visualization
+## 🌍 3D Tumor Visualization
 
 ![3D](screenshots/3d_generated.png)
 
 ---
 
-## 3D Surface Rendering
+## 🔷 3D Surface Rendering
 
 ![Surface](screenshots/3d_volume.png)
 
 ---
 
-## 3D Wireframe
+## 🕸️ 3D Wireframe
 
 ![Wireframe](screenshots/3d_wireframe.png)
 
 ---
 
+# 🏗️ System Architecture
+
+```text
+               BraTS2021 Dataset
+                      │
+                      ▼
+         MRI Preprocessing Pipeline
+                      │
+                      ▼
+              Custom 3D U-Net
+                      │
+                      ▼
+            Trained Model (.pth)
+                      │
+                      ▼
+          PyQt6 Desktop Application
+                      │
+      ┌───────────────┴───────────────┐
+      ▼                               ▼
+ 2D MRI Viewer                 3D Tumor Viewer
+      │                               │
+      └───────────────┬───────────────┘
+                      ▼
+          Prediction & PDF Report
+```
+
+---
+
 # 🔬 Methodology
 
-## Input MRI
+## 1️⃣ Input MRI
+
+- Multi-modal MRI volumes
+- FLAIR
+- T1
+- T1CE
+- T2
 
 ![Input](screenshots/1_input_3d.png)
 
 ---
 
-## Preprocessing
+## 2️⃣ MRI Preprocessing
+
+- Intensity normalization
+- Volume resizing
+- Tensor conversion
 
 ![Preprocessing](screenshots/2_preprocessing.png)
 
 ---
 
-## Feature Extraction
+## 3️⃣ Feature Extraction
+
+The encoder extracts hierarchical spatial features using 3D convolutions.
 
 ![Features](screenshots/3_features.png)
 
 ---
 
-## Segmentation Output
+## 4️⃣ Segmentation Output
+
+The decoder reconstructs a voxel-wise tumor mask.
 
 ![Segmentation](screenshots/4_segmentation.png)
 
 ---
 
-## Classification
+## 5️⃣ Tumor Classification
+
+The predicted segmentation is used to determine whether a tumor is present and to compute tumor statistics.
 
 ![Classification](screenshots/5_classification.png)
 
 ---
 
-## Complete Pipeline
+## 6️⃣ Complete Pipeline
 
 ![Pipeline](screenshots/6_methodology.png)
 
@@ -212,40 +170,66 @@ The project includes:
 
 # 📂 Dataset
 
-Dataset used:
+**Dataset Used**
 
 **BraTS2021 (Brain Tumor Segmentation Challenge)**
 
-MRI Modalities:
+MRI Modalities
 
 - FLAIR
 - T1
 - T1CE
 - T2
 
-Ground truth segmentation masks are provided for supervised learning.
+Ground-truth segmentation masks are provided for supervised training.
 
-Dataset is **not included** in this repository due to its size.
+> **Note:**  
+> The dataset is **not included** in this repository because of its size and licensing requirements.
 
 ---
 
-# ⚙ Installation
+# 🛠️ Technologies Used
 
-Clone the repository
+| Category | Technologies |
+|----------|--------------|
+| Programming | Python |
+| Deep Learning | PyTorch |
+| GUI | PyQt6 |
+| Medical Imaging | Nibabel |
+| Visualization | Matplotlib, PyVista, VTK |
+| Dataset | BraTS2021 |
+| Version Control | Git & GitHub |
+
+---
+
+# 📁 Project Structure
+
+```text
+brain_tumor_segmentation
+│
+├── checkpoints/
+├── inference_app/
+├── screenshots/
+├── src/
+├── README.md
+├── COMPLETEOVERVIEW.md
+├── requirements.txt
+└── main.py
+```
+
+---
+
+# ⚙️ Installation
 
 ```bash
 git clone https://github.com/pradeepan-pixel/brain-tumor-segmentation-studio.git
 
 cd brain-tumor-segmentation-studio
-```
 
-Install dependencies
-
-```bash
 pip install -r requirements.txt
 ```
 
-Run GUI
+Run the application
 
 ```bash
 python inference_app/main_gui.py
@@ -256,53 +240,35 @@ python inference_app/main_gui.py
 # 🚀 Usage
 
 1. Launch the application.
-2. Load a BraTS patient folder.
+2. Load a BraTS2021 patient folder.
 3. Load the trained model (`best.pth`).
 4. Run prediction.
 5. View segmentation in 2D.
-6. Generate 3D visualization.
-7. Export report.
+6. Generate a 3D visualization.
+7. Export the report.
 
 ---
 
-# 📁 Project Structure
-
-```
-brain_tumor_segmentation
-│
-├── checkpoints/
-├── inference_app/
-├── screenshots/
-├── src/
-├── README.md
-├── requirements.txt
-└── main.py
-```
-
----
-
-# 🛠 Technologies Used
-
-- Python
-- PyTorch
-- PyQt6
-- NumPy
-- Matplotlib
-- Nibabel
-- PyVista
-- VTK
-
----
-
-# 📈 Future Improvements
+# 🔮 Future Improvements
 
 - Multi-class tumor segmentation
 - MONAI integration
 - nnU-Net support
 - SwinUNETR implementation
 - Docker deployment
-- Web interface
-- Cloud inference
+- Web application version
+- Real-time inference optimization
+
+---
+
+# 🙏 Acknowledgements
+
+- BraTS2021 Challenge
+- PyTorch
+- PyQt6
+- Nibabel
+- PyVista
+- VTK
 
 ---
 
@@ -313,10 +279,13 @@ brain_tumor_segmentation
 Computer Science Engineering Student
 
 GitHub:
+
 https://github.com/pradeepan-pixel
 
 ---
 
-# ⭐ Support
+<p align="center">
 
-If you found this project useful, consider giving it a ⭐ on GitHub.
+⭐ If you found this project interesting, consider giving it a star!
+
+</p>
