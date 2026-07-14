@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="screenshots/banner.png" alt="Brain Tumor Segmentation Studio Banner" width="100%">
+</p>
 # Brain Tumor Segmentation Studio
 
 A deep learning-based Brain Tumor Segmentation application built using a custom 3D U-Net and the BraTS2021 dataset.
