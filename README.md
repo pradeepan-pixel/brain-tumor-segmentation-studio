@@ -1,6 +1,4 @@
-<p align="center">
-  <img src="screenshots/banner.png" alt="Brain Tumor Segmentation Studio Banner" width="100%">
-</p>
+![Brain Tumor Segmentation Studio Banner](screenshots/banner.png)
 
 <h1 align="center">🧠 Brain Tumor Segmentation Studio</h1>
 
