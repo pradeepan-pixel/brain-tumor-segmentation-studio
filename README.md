@@ -167,6 +167,7 @@ The predicted segmentation is used to determine whether a tumor is present and t
 ![Pipeline](screenshots/6_methodology.png)
 
 ---
+
 # 📊 Results
 
 The model was evaluated on real BraTS2021 patient volumes using the trained checkpoint.
@@ -186,8 +187,9 @@ The model was evaluated on real BraTS2021 patient volumes using the trained chec
 | Confidence | **0.946** |
 
 > Example prediction from **BraTS2021_00043** using the trained model.
+
 ---
----
+
 # 📄 Automated PDF Report
 
 After every prediction, **Brain Tumor Segmentation Studio** automatically generates a detailed PDF report summarizing the prediction results, quantitative metrics, visualizations, and inference methodology.
@@ -221,6 +223,7 @@ After every prediction, **Brain Tumor Segmentation Studio** automatically genera
 The generated report is useful for documentation, analysis, project demonstrations, and research presentations.
 
 ---
+
 # 📂 Dataset
 
 **Dataset Used**
@@ -261,6 +264,7 @@ Ground-truth segmentation masks are provided for supervised training.
 brain_tumor_segmentation
 │
 ├── checkpoints/
+├── docs/
 ├── inference_app/
 ├── screenshots/
 ├── src/
