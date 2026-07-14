@@ -322,24 +322,160 @@ brain_tumor_segmentation
 > **Note:** `inference_app/main_gui.py` is the application entry point. If a separate `main.py` exists at the repository root, verify it is still needed — otherwise remove it to avoid confusion about which file to run.
 
 ---
+#  Installation
 
-# Installation
+## 1. Clone the repository
 
 ```bash
 git clone https://github.com/pradeepan-pixel/brain-tumor-segmentation-studio.git
-
 cd brain-tumor-segmentation-studio
+```
 
+---
+
+## 2. Create a Python Virtual Environment
+
+```bash
+python3 -m venv venv
+```
+
+---
+
+## 3. Activate the Virtual Environment
+
+### Linux / Ubuntu
+
+```bash
+source venv/bin/activate
+```
+
+### Windows
+
+```bash
+venv\Scripts\activate
+```
+
+---
+
+## 4. Upgrade pip
+
+```bash
+python -m pip install --upgrade pip
+```
+
+---
+
+## 5. Install the Project Dependencies
+
+```bash
 pip install -r requirements.txt
 ```
 
-Run the application
+---
+
+## 6. Verify Installation (Optional)
+
+```bash
+python -c "import torch; print(torch.__version__)"
+```
+
+If no errors appear, the environment is ready.
+
+#  Running the Application
+
+## Method 1 (Recommended)
+
+Launch the application using the startup script:
+
+```bash
+cd inference_app
+./start_app.sh
+```
+
+---
+
+## Method 2 (Manual)
+
+Activate the virtual environment:
+
+```bash
+source venv/bin/activate
+```
+
+Then run:
 
 ```bash
 python inference_app/main_gui.py
 ```
 
 ---
+# Running the Application
+
+## Standard Mode (Recommended)
+
+Run the application using the default configuration:
+
+```bash
+source venv/bin/activate
+python inference_app/main_gui.py
+```
+
+This mode provides the complete application with a stable 3D visualization backend.
+
+---
+
+## Native VTK 3D Rendering
+
+To enable the native VTK-based interactive 3D renderer, run:
+
+```bash
+source venv/bin/activate
+QT_QPA_PLATFORM=xcb BTS_3D_BACKEND=vtk python inference_app/main_gui.py
+```
+
+If your system experiences OpenGL rendering issues, use software rendering:
+
+```bash
+source venv/bin/activate
+QT_QPA_PLATFORM=xcb LIBGL_ALWAYS_SOFTWARE=1 BTS_3D_BACKEND=vtk python inference_app/main_gui.py
+```
+
+---
+
+## One-Click Launcher
+
+The project also includes a launcher script:
+
+```bash
+cd inference_app
+./start_app.sh
+```
+
+This automatically:
+
+- Activates the virtual environment
+- Configures the required environment variables
+- Launches the application with the VTK 3D backend enabled
+
+---
+
+## Application Workflow
+
+1. Load a BraTS2021 patient folder.
+2. Load the trained model (`checkpoints/best.pth`).
+3. Click **Run Prediction**.
+4. Review the segmentation in the 2D viewer.
+5. Generate the interactive 3D visualization.
+6. Export the prediction report as a PDF.
+
+## Application Workflow
+
+1. Load a BraTS2021 patient folder.
+2. Load the trained model (`checkpoints/best.pth`).
+3. Click **Run Prediction**.
+4. Review the segmentation results in the 2D viewer.
+5. Generate the 3D visualization.
+6. Export the prediction report as a PDF.
 
 #  Usage
 
