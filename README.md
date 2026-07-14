@@ -2,7 +2,7 @@
   <img src="screenshots/banner.png" alt="Brain Tumor Segmentation Studio Banner" width="100%">
 </p>
 
-<h1 align="center">🧠 Brain Tumor Segmentation Studio</h1>
+<h1 align="center">Brain Tumor Segmentation Studio</h1>
 
 <p align="center">
 A Deep Learning Desktop Application for Brain Tumor Segmentation from Multi-Modal MRI using a Custom 3D U-Net
@@ -19,7 +19,7 @@ A Deep Learning Desktop Application for Brain Tumor Segmentation from Multi-Moda
 
 ---
 
-# 📑 Table of Contents
+#  Table of Contents
 
 - [Project Overview](#-project-overview)
 - [Key Features](#-key-features)
@@ -40,7 +40,7 @@ A Deep Learning Desktop Application for Brain Tumor Segmentation from Multi-Moda
 
 ---
 
-# 📌 Project Overview
+# Project Overview
 
 Brain Tumor Segmentation Studio is a desktop application that automatically detects and segments brain tumors from multi-modal MRI scans using a custom-built **3D U-Net** deep learning model trained on the **BraTS2021 dataset**.
 
@@ -48,24 +48,24 @@ The application provides an end-to-end workflow—from loading MRI scans and per
 
 ---
 
-# ✨ Key Features
+#  Key Features
 
-- 🧠 Custom 3D U-Net implementation in PyTorch
-- 🩻 Multi-modal MRI support (FLAIR, T1, T1CE, T2)
-- 🖥️ Interactive PyQt6 desktop application
-- 📊 Automatic tumor segmentation
-- 🌍 Interactive 3D tumor visualization
-- 🖼️ 2D MRI slice viewer
-- 📈 Tumor volume and prediction statistics
-- 📄 PDF report generation
-- 💾 Model checkpoint loading
-- ⚡ GPU acceleration using CUDA
+- Custom 3D U-Net implementation in PyTorch
+-  Multi-modal MRI support (FLAIR, T1, T1CE, T2)
+-  Interactive PyQt6 desktop application
+-  Automatic tumor segmentation
+-  Interactive 3D tumor visualization
+-  2D MRI slice viewer
+-  Tumor volume and prediction statistics
+-  PDF report generation
+-  Model checkpoint loading
+-  GPU acceleration using CUDA
 
 ---
 
-# 📷 Application Preview
+# Application Preview
 
-## 🏠 Home Screen
+##  Home Screen
 
 ![Home](screenshots/homepage.png)
 
@@ -73,7 +73,7 @@ The application's landing screen, where a patient case and trained model are sel
 
 ---
 
-## 📂 Loading Patient MRI
+##  Loading Patient MRI
 
 ![Patient](screenshots/patients_load.png)
 
@@ -81,7 +81,7 @@ Loading a BraTS2021 patient folder — all four MRI modalities (FLAIR, T1, T1CE,
 
 ---
 
-## 🤖 Loading Trained Model
+##  Loading Trained Model
 
 ![Model](screenshots/model.png)
 
@@ -89,7 +89,7 @@ Loading a trained `.pth` checkpoint into the app for inference.
 
 ---
 
-## 🎯 Brain Tumor Prediction
+##  Brain Tumor Prediction
 
 ![Prediction](screenshots/prediction_074.png)
 
@@ -97,7 +97,7 @@ Segmentation output overlaid on the MRI slice, showing the predicted tumor regio
 
 ---
 
-## 🌍 3D Tumor Visualization
+##  3D Tumor Visualization
 
 ![3D](screenshots/3d_generated.png)
 
@@ -105,7 +105,7 @@ Interactive 3D reconstruction of the segmented tumor volume.
 
 ---
 
-## 🔷 3D Surface Rendering
+##  3D Surface Rendering
 
 ![Surface](screenshots/3d_volume.png)
 
@@ -113,7 +113,7 @@ Surface-rendered view of the tumor volume for closer inspection of shape and bou
 
 ---
 
-## 🕸️ 3D Wireframe
+##  3D Wireframe
 
 ![Wireframe](screenshots/3d_wireframe.png)
 
@@ -121,7 +121,7 @@ Wireframe rendering mode, useful for viewing internal tumor structure alongside 
 
 ---
 
-# 🏗️ System Architecture
+# System Architecture
 
 ```text
                BraTS2021 Dataset
@@ -149,9 +149,9 @@ Wireframe rendering mode, useful for viewing internal tumor structure alongside 
 
 ---
 
-# 🔬 Methodology
+# Methodology
 
-## 1️⃣ Input MRI
+## 1️ Input MRI
 
 - Multi-modal MRI volumes
 - FLAIR
@@ -163,7 +163,7 @@ Wireframe rendering mode, useful for viewing internal tumor structure alongside 
 
 ---
 
-## 2️⃣ MRI Preprocessing
+## 2️MRI Preprocessing
 
 - Intensity normalization
 - Volume resizing
@@ -173,7 +173,7 @@ Wireframe rendering mode, useful for viewing internal tumor structure alongside 
 
 ---
 
-## 3️⃣ Feature Extraction
+## 3️ Feature Extraction
 
 The encoder extracts hierarchical spatial features using 3D convolutions.
 
@@ -181,7 +181,7 @@ The encoder extracts hierarchical spatial features using 3D convolutions.
 
 ---
 
-## 4️⃣ Segmentation Output
+## 4️ Segmentation Output
 
 The decoder reconstructs a voxel-wise tumor mask.
 
@@ -189,7 +189,7 @@ The decoder reconstructs a voxel-wise tumor mask.
 
 ---
 
-## 5️⃣ Tumor Classification
+## 5️ Tumor Classification
 
 The predicted segmentation is used to determine whether a tumor is present and to compute tumor statistics.
 
@@ -197,13 +197,13 @@ The predicted segmentation is used to determine whether a tumor is present and t
 
 ---
 
-## 6️⃣ Complete Pipeline
+## 6️ Complete Pipeline
 
 ![Pipeline](screenshots/6_methodology.png)
 
 ---
 
-# 📊 Results
+# Results
 
 The model was evaluated on real BraTS2021 patient volumes using the trained checkpoint.
 
@@ -225,71 +225,71 @@ The model was evaluated on real BraTS2021 patient volumes using the trained chec
 
 ---
 
-# ⚠️ Limitations
+#  Project Scope & Limitations
 
-- **Binary segmentation only.** The model currently predicts a single whole-tumor mask rather than the multi-class (enhancing tumor / tumor core / whole tumor) segmentation used in the official BraTS challenge scoring.
-- **High sensitivity, lower precision.** Sensitivity (0.9978) is notably higher than precision (0.8995), meaning the model is more likely to over-predict tumor regions (false positives) than miss them (false negatives). This is a reasonable tradeoff for a screening-style tool but should not be read as a fully calibrated clinical-grade result.
-- **Single-case example.** The metrics above are reported for one representative case (BraTS2021_00043). Aggregate performance across the full validation/test split should be reported separately for a complete picture.
-- **Domain generalization untested.** The model is trained and evaluated only on BraTS2021 data; performance on scans from different scanners, institutions, or preprocessing pipelines is unverified.
-- **Not a diagnostic tool.** This project is intended for academic and research demonstration purposes only, not clinical use.
+- The current implementation focuses on **whole tumor (WT) segmentation** using a binary classification approach, providing a clear and efficient demonstration of 3D medical image segmentation.
+
+- The project is developed and evaluated using the **BraTS2021 dataset**, ensuring consistency with a widely recognized benchmark in brain tumor segmentation research.
+
+- The desktop application is designed for **academic learning, research, and project demonstration**, showcasing the complete workflow from MRI loading and preprocessing to segmentation, visualization, and report generation.
+
+- Performance may vary when applied to MRI scans acquired using different scanners, imaging protocols, or datasets outside the training distribution.
+
+- Future versions can be extended to support **multi-class tumor sub-region segmentation**, additional datasets, and enhanced clinical visualization features.
 
 ---
 
-# 📄 Automated PDF Report
+# Automated PDF Report
 
 After every prediction, **Brain Tumor Segmentation Studio** automatically generates a detailed PDF report summarizing the prediction results, quantitative metrics, visualizations, and inference methodology.
 
 ## Report Includes
 
-- 🧠 Patient Information
-- ⏱️ Inference Time
-- 📊 Tumor Volume & Voxel Count
-- 📐 Maximum Tumor Diameter
-- 📍 Tumor Bounding Box & Centroid
-- 🎯 Dice Score
-- 📈 Jaccard (IoU)
-- ✅ Sensitivity (Recall)
-- 🎯 Precision
-- 🌍 3D MRI Visualization
-- 🩻 MRI Preprocessing Output
-- 🧠 Encoder Feature Maps
-- 🎨 Segmentation Output
-- 📉 Classification Probability Map
-- 📖 Complete Methodology Explanation
+- Patient Information
+-  Inference Time
+-  Tumor Volume & Voxel Count
+-  Maximum Tumor Diameter
+-  Tumor Bounding Box & Centroid
+-  Dice Score
+-  Jaccard (IoU)
+-  Sensitivity (Recall)
+-  Precision
+-  3D MRI Visualization
+-  MRI Preprocessing Output
+-  Encoder Feature Maps
+-  Segmentation Output
+-  Classification Probability Map
+-  Complete Methodology Explanation
 
-## 📸 Report Preview
+## Report Preview
 
 ![Report Preview](screenshots/report.png)
 
-## 📄 Sample PDF
+##  Sample PDF
 
-➡️ **[Download Sample Prediction Report](docs/sample_report.pdf)**
+**[Download Sample Prediction Report](docs/sample_report.pdf)**
 
 The generated report is useful for documentation, analysis, project demonstrations, and research presentations.
 
 ---
 
-# 📂 Dataset
+# Dataset
 
-**Dataset Used**
+This project was trained and evaluated using the **BraTS2021 (Brain Tumor Segmentation Challenge 2021)** dataset.
 
-**BraTS2021 (Brain Tumor Segmentation Challenge)**
-
-MRI Modalities
-
+### MRI Modalities
 - FLAIR
 - T1
 - T1CE
 - T2
 
-Ground-truth segmentation masks are provided for supervised training.
+### Official Dataset
+https://www.synapse.org/Synapse:syn25829067
 
-> **Note:**  
-> The dataset is **not included** in this repository because of its size and licensing requirements.
-
+> **Note:** The BraTS2021 dataset is not included in this repository due to licensing and storage limitations. Please download it from the official source above.
 ---
 
-# 🛠️ Technologies Used
+# Technologies Used
 
 | Category | Technologies |
 |----------|--------------|
@@ -303,7 +303,7 @@ Ground-truth segmentation masks are provided for supervised training.
 
 ---
 
-# 📁 Project Structure
+# Project Structure
 
 ```text
 brain_tumor_segmentation
@@ -323,7 +323,7 @@ brain_tumor_segmentation
 
 ---
 
-# ⚙️ Installation
+# Installation
 
 ```bash
 git clone https://github.com/pradeepan-pixel/brain-tumor-segmentation-studio.git
@@ -341,7 +341,7 @@ python inference_app/main_gui.py
 
 ---
 
-# 🚀 Usage
+#  Usage
 
 1. Launch the application.
 2. Load a BraTS2021 patient folder.
@@ -353,7 +353,7 @@ python inference_app/main_gui.py
 
 ---
 
-# 🔮 Future Improvements
+#  Future Improvements
 
 - Multi-class tumor segmentation
 - MONAI integration
@@ -365,7 +365,7 @@ python inference_app/main_gui.py
 
 ---
 
-# 🙏 Acknowledgements
+#  Acknowledgements
 
 - BraTS2021 Challenge
 - PyTorch
@@ -376,7 +376,7 @@ python inference_app/main_gui.py
 
 ---
 
-# 👨‍💻 Author
+# Author
 
 **Pradeep Kamalanathan**
 
