@@ -19,6 +19,27 @@ A Deep Learning Desktop Application for Brain Tumor Segmentation from Multi-Moda
 
 ---
 
+# 📑 Table of Contents
+
+- [Project Overview](#-project-overview)
+- [Key Features](#-key-features)
+- [Application Preview](#-application-preview)
+- [System Architecture](#️-system-architecture)
+- [Methodology](#-methodology)
+- [Results](#-results)
+- [Limitations](#-limitations)
+- [Automated PDF Report](#-automated-pdf-report)
+- [Dataset](#-dataset)
+- [Technologies Used](#️-technologies-used)
+- [Project Structure](#-project-structure)
+- [Installation](#️-installation)
+- [Usage](#-usage)
+- [Future Improvements](#-future-improvements)
+- [Acknowledgements](#-acknowledgements)
+- [Author](#-author)
+
+---
+
 # 📌 Project Overview
 
 Brain Tumor Segmentation Studio is a desktop application that automatically detects and segments brain tumors from multi-modal MRI scans using a custom-built **3D U-Net** deep learning model trained on the **BraTS2021 dataset**.
@@ -48,11 +69,15 @@ The application provides an end-to-end workflow—from loading MRI scans and per
 
 ![Home](screenshots/homepage.png)
 
+The application's landing screen, where a patient case and trained model are selected before running inference.
+
 ---
 
 ## 📂 Loading Patient MRI
 
 ![Patient](screenshots/patients_load.png)
+
+Loading a BraTS2021 patient folder — all four MRI modalities (FLAIR, T1, T1CE, T2) are read in and prepared for the pipeline.
 
 ---
 
@@ -60,11 +85,15 @@ The application provides an end-to-end workflow—from loading MRI scans and per
 
 ![Model](screenshots/model.png)
 
+Loading a trained `.pth` checkpoint into the app for inference.
+
 ---
 
 ## 🎯 Brain Tumor Prediction
 
 ![Prediction](screenshots/prediction_074.png)
+
+Segmentation output overlaid on the MRI slice, showing the predicted tumor region.
 
 ---
 
@@ -72,17 +101,23 @@ The application provides an end-to-end workflow—from loading MRI scans and per
 
 ![3D](screenshots/3d_generated.png)
 
+Interactive 3D reconstruction of the segmented tumor volume.
+
 ---
 
 ## 🔷 3D Surface Rendering
 
 ![Surface](screenshots/3d_volume.png)
 
+Surface-rendered view of the tumor volume for closer inspection of shape and boundaries.
+
 ---
 
 ## 🕸️ 3D Wireframe
 
 ![Wireframe](screenshots/3d_wireframe.png)
+
+Wireframe rendering mode, useful for viewing internal tumor structure alongside the surface mesh.
 
 ---
 
@@ -190,6 +225,16 @@ The model was evaluated on real BraTS2021 patient volumes using the trained chec
 
 ---
 
+# ⚠️ Limitations
+
+- **Binary segmentation only.** The model currently predicts a single whole-tumor mask rather than the multi-class (enhancing tumor / tumor core / whole tumor) segmentation used in the official BraTS challenge scoring.
+- **High sensitivity, lower precision.** Sensitivity (0.9978) is notably higher than precision (0.8995), meaning the model is more likely to over-predict tumor regions (false positives) than miss them (false negatives). This is a reasonable tradeoff for a screening-style tool but should not be read as a fully calibrated clinical-grade result.
+- **Single-case example.** The metrics above are reported for one representative case (BraTS2021_00043). Aggregate performance across the full validation/test split should be reported separately for a complete picture.
+- **Domain generalization untested.** The model is trained and evaluated only on BraTS2021 data; performance on scans from different scanners, institutions, or preprocessing pipelines is unverified.
+- **Not a diagnostic tool.** This project is intended for academic and research demonstration purposes only, not clinical use.
+
+---
+
 # 📄 Automated PDF Report
 
 After every prediction, **Brain Tumor Segmentation Studio** automatically generates a detailed PDF report summarizing the prediction results, quantitative metrics, visualizations, and inference methodology.
@@ -266,13 +311,15 @@ brain_tumor_segmentation
 ├── checkpoints/
 ├── docs/
 ├── inference_app/
+│   └── main_gui.py        # Application entry point — run this file
 ├── screenshots/
 ├── src/
 ├── README.md
 ├── COMPLETEOVERVIEW.md
-├── requirements.txt
-└── main.py
+└── requirements.txt
 ```
+
+> **Note:** `inference_app/main_gui.py` is the application entry point. If a separate `main.py` exists at the repository root, verify it is still needed — otherwise remove it to avoid confusion about which file to run.
 
 ---
 
