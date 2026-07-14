@@ -1,0 +1,17 @@
+.
+├── data_loader.py
+├── dataset
+│   └── archive
+│       └── BraTS2021
+├── main.py
+├── models
+├── notebooks
+├── outputs
+├── predict.py
+├── requirements.txt
+├── structure.txt
+├── train.py
+├── utils.py
+└── view_mri.py
+
+7 directories, 8 files

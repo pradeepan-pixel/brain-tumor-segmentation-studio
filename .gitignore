@@ -1,0 +1,29 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+venv/
+.venv/
+
+# Large dataset
+dataset/
+
+# Generated outputs
+outputs/
+export/
+inference_app/outputs/
+inference_app/export/
+
+# Temporary test data
+test_patient/
+
+# Ignore only the last checkpoint
+checkpoints/last.pth
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
