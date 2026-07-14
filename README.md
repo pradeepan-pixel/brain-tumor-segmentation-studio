@@ -188,39 +188,39 @@ The model was evaluated on real BraTS2021 patient volumes using the trained chec
 > Example prediction from **BraTS2021_00043** using the trained model.
 ---
 ---
+# 📄 Automated PDF Report
 
-# 📑 Generated Prediction Report
+After every prediction, **Brain Tumor Segmentation Studio** automatically generates a detailed PDF report summarizing the prediction results, quantitative metrics, visualizations, and inference methodology.
 
-After each inference, the application automatically generates a comprehensive PDF report summarizing the prediction results and visualizations.
-
-The report includes:
+## Report Includes
 
 - 🧠 Patient Information
 - ⏱️ Inference Time
-- 📊 Tumor Volume and Voxel Count
+- 📊 Tumor Volume & Voxel Count
 - 📐 Maximum Tumor Diameter
-- 📍 Tumor Bounding Box and Centroid
+- 📍 Tumor Bounding Box & Centroid
 - 🎯 Dice Score
 - 📈 Jaccard (IoU)
-- ✅ Sensitivity
+- ✅ Sensitivity (Recall)
 - 🎯 Precision
 - 🌍 3D MRI Visualization
-- 🩻 MRI Preprocessing Results
+- 🩻 MRI Preprocessing Output
 - 🧠 Encoder Feature Maps
 - 🎨 Segmentation Output
 - 📉 Classification Probability Map
 - 📖 Complete Methodology Explanation
 
-## Sample Report Preview
+## 📸 Report Preview
 
 ![Report Preview](screenshots/report.png)
 
-📄 **Sample PDF Report:** [View Report](docs/sample_report.pdf)
+## 📄 Sample PDF
 
-The report is generated automatically after prediction and can be exported directly from the desktop application for documentation, analysis, and presentation purposes.
+➡️ **[Download Sample Prediction Report](docs/sample_report.pdf)**
+
+The generated report is useful for documentation, analysis, project demonstrations, and research presentations.
 
 ---
-
 # 📂 Dataset
 
 **Dataset Used**
