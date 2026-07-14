@@ -167,6 +167,25 @@ The predicted segmentation is used to determine whether a tumor is present and t
 ![Pipeline](screenshots/6_methodology.png)
 
 ---
+# 📊 Results
+
+The model was evaluated on real BraTS2021 patient volumes using the trained checkpoint.
+
+| Metric | Value |
+|---------|------:|
+| Dataset | BraTS2021 |
+| Model | Custom 3D U-Net |
+| Output | Binary Whole Tumor Segmentation |
+| Epoch | 36 |
+| Inference Time | **2.76 s** |
+| Dice Score | **0.9461** |
+| Jaccard (IoU) | **0.8977** |
+| Sensitivity | **0.9978** |
+| Precision | **0.8995** |
+| Tumor Volume | **109.504 ml** |
+| Confidence | **0.946** |
+
+> Example prediction from **BraTS2021_00043** using the trained model.
 
 # 📂 Dataset
 
