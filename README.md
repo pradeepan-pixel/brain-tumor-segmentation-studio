@@ -58,6 +58,29 @@ The project includes:
 - PDF report generation
 
 ---
+# 🖼️ Application Preview
+
+## Home Screen
+
+![Home](screenshots/homepage.png)
+
+---
+
+## Patient & Model Loading
+
+![Patient](screenshots/patients_load.png)
+
+---
+
+## Prediction Results
+
+![Prediction](screenshots/prediction_074.png)
+
+---
+
+## 3D Tumor Visualization
+
+![3D](screenshots/3d_generated.png)
 
 # 🏗 System Architecture
 
